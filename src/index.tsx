@@ -30,15 +30,21 @@ const Top: FC<{ messages: string[] }> = (props: { messages: string[] }) => {
 };
 
 app.get("/", (c) => {
-  const messages = ["Good Morning", "Good Evening", "Good Night", "Good Bye!!!"];
+  const messages = [
+    "Good Morning",
+    "Good Evening",
+    "Good Night",
+    "Good Bye!!!",
+    "Bad Day",
+  ];
   return c.render(<Top messages={messages} />);
 });
 
-app.get('/hello', (c) => {
-  return c.render(<div>Hello</div>);
+app.get("/hello", (c) => {
+  return c.render(<div>Hello!!</div>);
 });
 
-app.get('/random', (c) => {
+app.get("/random", (c) => {
   return c.render(<div>{Math.random()}</div>);
 });
 
